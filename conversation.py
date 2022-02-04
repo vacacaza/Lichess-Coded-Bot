@@ -19,18 +19,18 @@ class Conversation:
             self.command(line, game, line.text[1:].lower())
 
     def command(self, line, game, cmd):
-        if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !wait, !name, !howto, !eval, !queue")
+        if cmd == "list" or cmd == "help":
+            self.send_reply(line, "Supported commands: !wait, !name, !howto, !eval, !queue,!owner,!list")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120)
             self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
             name = game.me.name
-            self.send_reply(line, "{} using c++ and java codes running {} (lichess-bot v{}) on heroku server.".format(name, self.engine.name(), self.version))
-        elif cmd == "id":
-            self.send_reply(line, "ChessGreatPlayer")
+            self.send_reply(line, "{} running {} (lichess-bot v{}) on heroku server.".format(name, self.engine.name(), self.version))
+        elif cmd == "owner":
+            self.send_reply(line, "@EshanHasaranga200703")
         elif cmd == "howto":
-            self.send_reply(line, "How to run your own bot: Check out 'Lichess Bot API' or go to https://github.com/LichessBot-Coders/Lichess-Coded-Bot")
+            self.send_reply(line, "How to run your own bot: Check out @EshanHasaranga200703 's blog about making lichess bots")
         elif cmd == "eval":
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
