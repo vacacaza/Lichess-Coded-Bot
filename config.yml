@@ -82,8 +82,8 @@ challenge:                   # incoming challenges
   sort_by: "best"            # possible values: "best", "first"
   accept_bot: true          # accepts challenges coming from other bots
   only_bot: false            # accept challenges by bots only
-  max_increment: 180         # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
-  min_increment: 0           # minimum amount of increment to accept a challenge
+  max_increment: 20         # maximum amount of increment to accaept a challenge. the max is 180. set to 0 for no increment
+  min_increment: 1           # minimum amount of increment to accept a challenge
   variants:                  # chess variants to accept (http://lichess.org/variant)
     - standard
 #   - fromPosition
@@ -104,3 +104,11 @@ challenge:                   # incoming challenges
   modes:                     # game modes to accept
     - casual                 # unrated games
     - rated                  # rated games - must comment if the engine doesn't try to win
+  
+  greeting:
+    # Optional substitution keywords (include curly braces):
+    #   {opponent} to insert opponent's name
+    #   {me} to insert bot's name
+    # Any other words in curly braces will be removed.
+    hello: "Good luck {opponent}!Thanks for playing." # Message to send to chat at the start of a game
+    goodbye: "Good game {opponent}!Thanks for playing." # Message to send to chat at the end of a game
