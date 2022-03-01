@@ -1,4 +1,4 @@
-token: "lip_VXHp9KK30muAInGSAWoU"    # Lichess OAuth2 Token.
+token: "lip_tWJRegG8uq23WHjcQSDl"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -87,14 +87,14 @@ challenge:                   # incoming challenges
   variants:                  # chess variants to accept (http://lichess.org/variant)
     - standard
 #   - fromPosition
-    - antichess
-    - atomic
+#   - antichess
+#   - atomic
     - chess960
-    - crazyhouse
-    - horde
+#   - crazyhouse
+#   - horde
     - kingOfTheHill
-    - racingKings
-    - threeCheck
+#   - racingKings
+#   - threeCheck
   time_controls:             # time controls to accept
     - bullet
     - blitz
